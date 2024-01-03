@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Simulador de Finanzas Personales</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Simulador de Finanzas Personales</h1>
+    
+    <div class="inputs-container">
+      <label for="sueldo">Sueldo:</label>
+      <input type="number" id="sueldo">
+      
+      <label for="gastos">Gastos (separados por coma):</label>
+      <input type="text" id="gastos">
+      
+      <label for="descripcionGastos">Descripción de gastos (separados por coma):</label>
+      <input type="text" id="descripcionGastos">
+      
+      <label for="metaAhorro">Meta de ahorro:</label>
+      <input type="number" id="metaAhorro">
+    </div>
+    
+    <button id="calcularBtn">Calcular</button>
+    
+    <div class="grafico-container">
+      <canvas id="graficoCanvas"></canvas>
+    </div>
+    
+    <div id="resultado"></div>
+    
+    <div id="tiempoParaAhorro"></div>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>

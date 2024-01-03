@@ -1,0 +1,88 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f7f7f7;
+  }
+  
+  .container {
+    width: 320px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  h1 {
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+    text-align: left;
+  }
+  
+  .inputs-container {
+    text-align: left;
+    margin-bottom: 20px;
+  }
+  
+  input[type="number"],
+  input[type="text"],
+  button {
+    width: calc(100% - 16px);
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  button {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #2980b9;
+  }
+  
+  #grafico,
+  #resultado {
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+  }
+  
+  #tiempoParaAhorro {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #555;
+  }
+
+
+.grafico-container {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  #graficoCanvas {
+    width: 100%;
+    max-width: 300px; /* Ancho máximo para mantener el tamaño legible */
+  }
+  
+  
