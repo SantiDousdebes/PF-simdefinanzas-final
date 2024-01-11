@@ -19,11 +19,12 @@ function calcularTiempo() {
   const tiempoAhorroDiv = document.getElementById('tiempoParaAhorro');
   tiempoAhorroDiv.innerHTML = `Tardarás aproximadamente ${tiempoParaAhorro.toFixed(2)} meses en alcanzar tu meta de ahorro.`;
 
-  generarTabla();
-  generarGrafico();
+  // Actualiza la interfaz después de calcular el tiempo
+  actualizarInterfaz();
 }
 
 function cargarDatos() {
+  console.log('Cargando datos localmente...');
   fetch('datos.json')
     .then(response => {
       if (!response.ok) {
@@ -33,9 +34,12 @@ function cargarDatos() {
     })
     .then(data => {
       manipularDatos(data);
+      console.log('Datos cargados localmente:', data);
+      // Actualiza la interfaz después de cargar y manipular los datos
+      actualizarInterfaz();
     })
     .catch(error => {
-      console.error('Error de carga:', error);
+      console.error('Error de carga local:', error);
     });
 }
 
@@ -47,11 +51,15 @@ function manipularDatos(data) {
 }
 
 function cargarDatosExternos() {
+  console.log('Cargando datos externamente...');
   const xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       const data = JSON.parse(this.responseText);
       manipularDatos(data);
+      console.log('Datos cargados externamente:', data);
+      // Actualiza la interfaz después de cargar y manipular los datos
+      actualizarInterfaz();
     }
   };
   xhttp.open("GET", "https://ejemplo.com/api/datos", true);
@@ -113,6 +121,12 @@ function generarGrafico() {
       }
     }
   });
+}
+
+function actualizarInterfaz() {
+  // Llama a funciones para actualizar la interfaz
+  generarTabla();
+  generarGrafico();
 }
 
 document.getElementById('calcularBtn').addEventListener('click', calcularTiempo);
